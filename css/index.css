@@ -18,43 +18,67 @@ body {
 
 #banner {
   text-align: center;
+  position: relative;
 }
 
-#banner .title {
-  font-size: clamp(42px, 6.25vw, 120px);
-  font-weight: 700;
-  line-height: 1.33333;
+#banner .banner-head {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
 }
 
-#banner .title-sticky {
-  padding: clamp(80px, 11.45833vw, 220px) 0 8px;
+#banner .banner-head--fixed {
+  position: fixed;
 }
 
-#banner .title-container {
-  height: clamp(56px, 7.08333vw, 136px);
+#banner .banner-head--leave {
+  top: unset;
+  bottom: 0;
 }
 
-#banner .title-item {
-  padding: 0 0 8px;
-  color: #78be83;
+#banner .banner-head--sticky {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
-#banner .title-item:nth-child(2) {
-  opacity: 0.6;
+#banner .banner-logo {
+  height: 220px;
 }
 
-#banner .title-item:nth-child(3) {
-  opacity: 0.4;
+@media (max-width: 1024px) {
+  #banner .banner-logo {
+    min-height: 35vh;
+  }
 }
 
-#banner .title-item:nth-child(4) {
-  opacity: 0.2;
+@media (max-width: 767px) {
+  #banner .banner-logo {
+    height: 80px;
+  }
 }
 
-#banner .down {
+#banner .banner-space {
+  height: 260px;
+}
+
+@media (max-width: 1024px) {
+  #banner .banner-space {
+    min-height: 35vh;
+  }
+}
+
+@media (max-width: 767px) {
+  #banner .banner-space {
+    height: 80px;
+  }
+}
+
+#banner .button-down {
   width: clamp(45px, 3.64583vw, 70px);
   height: clamp(45px, 3.64583vw, 70px);
-  margin: clamp(80px, 11.45833vw, 220px) auto 0;
+  margin: 0 auto 44px;
   background: #fcfcfc;
   color: #131313;
   font-size: 20px;
@@ -71,4 +95,56 @@ body {
           align-items: center;
   opacity: .8;
   cursor: pointer;
+}
+
+#banner .title-container {
+  width: 100%;
+  padding: 0 0 165px;
+  margin: -354px 0 0;
+}
+
+#banner .title {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1.33333;
+}
+
+#banner .title-banner {
+  padding: 0 0 8px;
+}
+
+#banner .title-item {
+  padding: 0 0 8px;
+  color: #78be83;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+
+#banner .title-item--noShow {
+  opacity: 0 !important;
+}
+
+#banner .title-item--show {
+  opacity: 1;
+}
+
+#banner .title-item:nth-child(2) {
+  opacity: 0.5;
+}
+
+#banner .title-item:nth-child(3) {
+  opacity: 0.1;
+}
+
+#banner .title-item:nth-child(4) {
+  opacity: 0.02;
+}
+
+#img-parallax {
+  height: 100vw;
+  min-height: 100vh;
+  background: #fff3;
 }
