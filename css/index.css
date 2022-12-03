@@ -11,5 +11,64 @@
 html,
 body {
   height: 100%;
+  background: #131313;
+  color: #fcfcfc;
   scroll-behavior: smooth;
+}
+
+#banner {
+  text-align: center;
+}
+
+#banner .title {
+  font-size: clamp(42px, 6.25vw, 120px);
+  font-weight: 700;
+  line-height: 1.33333;
+}
+
+#banner .title-sticky {
+  padding: clamp(80px, 11.45833vw, 220px) 0 8px;
+}
+
+#banner .title-container {
+  height: clamp(56px, 7.08333vw, 136px);
+}
+
+#banner .title-item {
+  padding: 0 0 8px;
+  color: #78be83;
+}
+
+#banner .title-item:nth-child(2) {
+  opacity: 0.6;
+}
+
+#banner .title-item:nth-child(3) {
+  opacity: 0.4;
+}
+
+#banner .title-item:nth-child(4) {
+  opacity: 0.2;
+}
+
+#banner .down {
+  width: clamp(45px, 3.64583vw, 70px);
+  height: clamp(45px, 3.64583vw, 70px);
+  margin: clamp(80px, 11.45833vw, 220px) auto 0;
+  background: #fcfcfc;
+  color: #131313;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: .8;
+  cursor: pointer;
 }

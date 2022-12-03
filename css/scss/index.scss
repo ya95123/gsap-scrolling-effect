@@ -1,3 +1,7 @@
+$bg-main: #131313;
+$white: #fcfcfc;
+$color-main: #78be83;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,5 +13,54 @@
 html,
 body {
   height: 100%;
+  background: $bg-main;
+  color: $white;
   scroll-behavior: smooth;
+}
+
+#banner {
+  text-align: center;
+
+  .title {
+    font-size: clamp(42px, (120/1920)*100vw, 120px);
+    font-weight: 700;
+    line-height: (160/120);
+
+    &-sticky {
+      padding: clamp(80px, (220/1920)*100vw, 220px) 0 8px;
+    }
+
+    &-container {
+      height: clamp(56px, (136/1920)*100vw, 136px);
+    }
+
+    &-item {
+      padding: 0 0 8px;
+      color: $color-main;
+
+      $item-opacity: 1;
+
+      @for $i from 2 through 4 {
+        &:nth-child(#{$i}) {
+          opacity: ($item-opacity - ($i*2/10));
+        }
+      }
+    }
+  }
+
+  .down {
+    width: clamp(45px, (70/1920)*100vw, 70px);
+    height: clamp(45px, (70/1920)*100vw, 70px);
+    margin: clamp(80px, (220/1920)*100vw, 220px) auto 0;
+    background: $white;
+    color: $bg-main;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .8;
+    cursor: pointer;
+  }
 }
